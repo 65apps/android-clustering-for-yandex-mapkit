@@ -56,6 +56,7 @@ open class DefaultClusterManager<in C : RenderConfig>(
 
     override fun setItems(clusters: Set<Cluster>) {
         algorithmLock.writeLock().withLock {
+            algorithm.clearItems()
             algorithm.addItems(clusters)
             onModifyRawClusters()
         }

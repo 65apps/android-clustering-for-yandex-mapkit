@@ -139,7 +139,7 @@ open class YandexClusterRenderer(private val map: Map,
 
     override fun onRemove() {
         tapListener?.let {
-            layer.addTapListener(it)
+            layer.removeTapListener(it)
         }
     }
 
